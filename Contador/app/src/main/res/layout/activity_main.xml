@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Contador" />
+
+    <Button
+        android:id="@+id/buttonReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reset"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/buttonSuma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonReset"
+        android:layout_alignLeft="@+id/buttonReset"
+        android:layout_alignStart="@+id/buttonReset"
+        android:layout_marginBottom="28dp"
+        android:text="Suma" />
+
+    <Button
+        android:id="@+id/buttonResta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/buttonReset"
+        android:layout_alignRight="@+id/buttonReset"
+        android:layout_below="@+id/buttonReset"
+        android:layout_marginTop="28dp"
+        android:text="Resta" />
+</RelativeLayout>
