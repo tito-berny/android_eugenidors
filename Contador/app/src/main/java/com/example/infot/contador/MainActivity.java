@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void mostrarresultado(){
-        TextView resultado = (TextView)findViewById(R.id.editText);
-        resultado.setText("Contador : " + contador);
+        TextView resultado = (TextView)findViewById(R.id.editText);  //Creamos una nueva vista y con findViewId buscamo la Vista
+        resultado.setText("Contador : " + contador);  
     }
 }
