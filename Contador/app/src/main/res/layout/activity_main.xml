@@ -18,7 +18,8 @@
         android:layout_height="wrap_content"
         android:text="Reset"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="resetcontador"/>
 
     <Button
         android:id="@+id/buttonSuma"
@@ -28,6 +29,7 @@
         android:layout_alignLeft="@+id/buttonReset"
         android:layout_alignStart="@+id/buttonReset"
         android:layout_marginBottom="28dp"
+        android:onClick="sumacontador"
         android:text="Suma" />
 
     <Button
@@ -38,5 +40,6 @@
         android:layout_alignRight="@+id/buttonReset"
         android:layout_below="@+id/buttonReset"
         android:layout_marginTop="28dp"
-        android:text="Resta" />
+        android:text="Resta"
+        android:onClick="restacontador"/>
 </RelativeLayout>
