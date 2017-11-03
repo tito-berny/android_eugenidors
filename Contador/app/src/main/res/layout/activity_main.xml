@@ -4,13 +4,33 @@
 
     <EditText
         android:id="@+id/editText"
+        android:layout_width="176dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonSuma"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:autoText="false"
+        android:ems="5"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColorLink="@android:color/transparent"
+        android:textSize="56sp" />
+
+    <EditText
+        android:id="@+id/editText3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:ems="10"
+        android:layout_weight="1"
+        android:ems="5"
         android:inputType="textPersonName"
-        android:text="Contador" />
+        android:text="Contador:"
+        android:textAlignment="center"
+        android:textColorLink="@android:color/transparent"
+        android:textDirection="firstStrongRtl"
+        android:textSize="30sp"
+        android:verticalScrollbarPosition="left" />
 
     <Button
         android:id="@+id/buttonReset"
@@ -42,4 +62,43 @@
         android:layout_marginTop="28dp"
         android:text="Resta"
         android:onClick="restacontador"/>
+
+    <CheckBox
+        android:id="@+id/checkBoxNegativos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="32dp"
+        android:layout_toEndOf="@+id/buttonResta"
+        android:layout_toRightOf="@+id/buttonResta"
+        android:checked="true"
+        android:text="Negativos" />
+
+    <EditText
+        android:id="@+id/textInici"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/checkBoxNegativos"
+        android:layout_alignBottom="@+id/checkBoxNegativos"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="21dp"
+        android:layout_marginStart="21dp"
+        android:digits="1234567890"
+        android:ems="8"
+        android:inputType="phone"
+        android:text="" />
+
+    <EditText
+        android:id="@+id/textInicitext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textInici"
+        android:layout_alignLeft="@+id/textInici"
+        android:layout_alignStart="@+id/textInici"
+        android:digits="1234567890"
+        android:ems="8"
+        android:focusable="false"
+        android:inputType="numberDecimal"
+        android:text="Inici en :" />
 </RelativeLayout>
