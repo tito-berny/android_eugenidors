@@ -27,6 +27,7 @@
             android:id="@+id/textViewPanel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textAlignment="center"
             android:textSize="30sp" />
 
     </LinearLayout>
@@ -150,14 +151,14 @@
                 android:text="-" />
 
             <Button
-                android:id="@+id/botonx"
+                android:id="@+id/botonmultiplicar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="X" />
 
             <Button
-                android:id="@+id/botondivision"
+                android:id="@+id/botondividir"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -165,7 +166,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/botonIgual"
+            android:id="@+id/botonigual"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="=" />
