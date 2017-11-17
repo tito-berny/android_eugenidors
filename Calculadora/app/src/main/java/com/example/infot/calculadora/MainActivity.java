@@ -4,17 +4,18 @@ import android.annotation.SuppressLint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     Button button0, button1, button2, button3, button4, button5, button6,
-            button7, button8, button9, buttonMenos, buttonSub, buttonDivision,
-            buttonMultiplicar, buttonMas, buttonC, bottonIgual;
+            button7, button8, button9, buttonMenos, buttonDivision,
+            buttonMultiplicar, buttonMas, buttonC, buttonIgual;
 
-    EditText crunchifyEditText;
+    CheckBox onoff;
 
 
     float primernumero, segundonumero;
@@ -32,7 +33,10 @@ public class MainActivity extends AppCompatActivity {
 
         // Declaro el Panel
         final TextView resultado = (TextView) findViewById(R.id.textViewPanel);
-
+        // Declaro el checkbox
+        final CheckBox onoff = (CheckBox) findViewById(R.id.checkBoxOn);
+       // Color del Panel en azul
+        resultado.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
         // Declaro els botons
 
         button0 = (Button) findViewById(R.id.boton0);
@@ -49,79 +53,132 @@ public class MainActivity extends AppCompatActivity {
         buttonMenos = (Button) findViewById(R.id.botonmenos);
         buttonDivision = (Button) findViewById(R.id.botondividir);
         buttonMultiplicar = (Button) findViewById(R.id.botonmultiplicar);
-        bottonIgual = (Button) findViewById(R.id.botonigual);
+        buttonIgual = (Button) findViewById(R.id.botonigual);
+        buttonC =(Button) findViewById(R.id.buttonC);
 
+        //Escuchador de checkbox encendio o apagado
+        onoff.setOnClickListener(new OnClickListener() {
 
-        //Escoltadors per quant es fasi un click al numerol' afegeixi al panel
+            @Override
+            public void onClick(View v) {
+                // Si el checkbox esta activo botones activados
+                if (onoff.isChecked()){
+                    resultado.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+                    resultado.setText(""); // Ponemos el panel de nuevo a null
+                    button0.setEnabled(true);
+                    button1.setEnabled(true);
+                    button2.setEnabled(true);
+                    button3.setEnabled(true);
+                    button4.setEnabled(true);
+                    button5.setEnabled(true);
+                    button6.setEnabled(true);
+                    button7.setEnabled(true);
+                    button8.setEnabled(true);
+                    button9.setEnabled(true);
+                    buttonC.setEnabled(true);
+                    buttonMas.setEnabled(true);
+                    buttonMenos.setEnabled(true);
+                    buttonDivision.setEnabled(true);
+                    buttonMultiplicar.setEnabled(true);
+                    buttonIgual.setEnabled(true);
 
-        button1.setOnClickListener(new View.OnClickListener() {
+                }
+                //Si no esta cheked inactivos
+                else{
+                    resultado.setTextColor(getResources().getColor(R.color.colorAccent));
+                    resultado.setText("OFF");  //Colocamos Off en el panel
+                    button0.setEnabled(false);
+                    button1.setEnabled(false);
+                    button2.setEnabled(false);
+                    button3.setEnabled(false);
+                    button4.setEnabled(false);
+                    button5.setEnabled(false);
+                    button6.setEnabled(false);
+                    button7.setEnabled(false);
+                    button8.setEnabled(false);
+                    button9.setEnabled(false);
+                    buttonC.setEnabled(false);
+                    buttonMas.setEnabled(false);
+                    buttonMenos.setEnabled(false);
+                    buttonDivision.setEnabled(false);
+                    buttonMultiplicar.setEnabled(false);
+                    buttonIgual.setEnabled(false);
+                }
+            }
+        });
+
+        //Escuchador de clicks en botones, pone el numero del boton en el panel
+        button1.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 resultado.setText(resultado.getText() + "1");
             }
         });
-
-        button2.setOnClickListener(new View.OnClickListener() {
+        button2.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 resultado.setText(resultado.getText() + "2");
             }
         });
-
-        button3.setOnClickListener(new View.OnClickListener() {
+        button3.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 resultado.setText(resultado.getText() + "3");
             }
         });
-
-        button4.setOnClickListener(new View.OnClickListener() {
+        button4.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 resultado.setText(resultado.getText() + "4");
             }
         });
-
-        button5.setOnClickListener(new View.OnClickListener() {
+        button5.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 resultado.setText(resultado.getText() + "5");
             }
         });
-
-        button6.setOnClickListener(new View.OnClickListener() {
+        button6.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 resultado.setText(resultado.getText() + "6");
             }
         });
-
-        button7.setOnClickListener(new View.OnClickListener() {
+        button7.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 resultado.setText(resultado.getText() + "7");
             }
         });
-        button8.setOnClickListener(new View.OnClickListener() {
+        button8.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 resultado.setText(resultado.getText() + "8");
             }
         });
-        button9.setOnClickListener(new View.OnClickListener() {
+        button9.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 resultado.setText(resultado.getText() + "9");
             }
-        });button0.setOnClickListener(new View.OnClickListener() {
+        });
+        button0.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 resultado.setText(resultado.getText() + "0");
             }
         });
+        //Boton CE pone a 0 la variante principal y el Panel
+        buttonC.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resultado.setText("");
 
-        // Escuchador para el boton menos, encapsula en un float variable el texto del Pamel
-        buttonMas.setOnClickListener(new View.OnClickListener() {
+            }
+        });
+
+        // Escuchador para el boton mas, encapsula en un float variable el texto del Pamel
+        buttonMas.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Si resultado esta en null pone el Panel en blanco
@@ -137,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //Escuchador boton menos
-        buttonMenos.setOnClickListener(new View.OnClickListener() {
+        buttonMenos.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 primernumero = Float.parseFloat(resultado.getText() + "");
@@ -147,7 +204,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //Escuchador boton multiplicar
-        buttonMultiplicar.setOnClickListener(new View.OnClickListener() {
+        buttonMultiplicar.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 primernumero = Float.parseFloat(resultado.getText() + "");
@@ -156,7 +213,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         //Escuchador boton Division
-        buttonDivision.setOnClickListener(new View.OnClickListener() {
+        buttonDivision.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 primernumero = Float.parseFloat(resultado.getText() + "");
@@ -166,7 +223,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //Escuchador para el boton igual, comprueva por booleans que boton de operacion se apreto
-        bottonIgual.setOnClickListener(new View.OnClickListener() {
+        buttonIgual.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 segundonumero = Float.parseFloat(resultado.getText() + "");

@@ -41,12 +41,26 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginRight="50dp"
+            android:gravity="right">
+
+            <Button
+                android:id="@+id/buttonC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CE" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:gravity="center_vertical|center_horizontal|center">
 
             <Button
                 android:id="@+id/boton1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:saveEnabled="false"
                 android:text="1" />
 
             <Button
@@ -175,6 +189,8 @@
             android:id="@+id/checkBoxOn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:checked="true"
+            android:onClick="onoff"
             android:text="ON/OFF  " />
 
     </LinearLayout>
